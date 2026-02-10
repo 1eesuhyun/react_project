@@ -4,6 +4,7 @@ export interface MainItem{
     address:string;
     hit:number;
     contenttype:number;
+    image1:string;
 }
 
 export interface TravelItem{
