@@ -13,6 +13,7 @@ export interface TravelItem{
     address:string;
     hit:number;
     contenttype:number;
+    image1:string;
 }
 
 export interface MainData{
