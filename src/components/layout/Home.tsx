@@ -1,6 +1,7 @@
 import {Fragment, useState} from 'react'
 import {useQuery} from "@tanstack/react-query";
-/*import apiClient from "../../http-commons"*/
+import apiClient from "../../http-commons"
+import {MainData,MainItem,TravelItem} from "../../commons/commonsData";
 
 function Home(){
     return (
@@ -10,6 +11,13 @@ function Home(){
                 <div className="container px-4 px-lg-5 mt-5">
                     <div className="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                         <div className="col mb-5">
+                            <table className="table">
+                                <tbody>
+                                <tr>
+                                    <td className="text-left">서울 여행</td>
+                                </tr>
+                                </tbody>
+                            </table>
                             <div className="card h-100">
                                 {/* Product image */}
                                 <img className="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
@@ -31,7 +39,6 @@ function Home(){
                         <div className="col mb-5">
                             <div className="card h-100">
                                 {/* Sale badge */}
-                                <div className="badge bg-dark text-white position-absolute" style={{top: "0.5rem", right: "0.5rem"}}>Sale</div>
                                 {/* Product image */}
                                 <img className="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
                                 {/* Product details */}
@@ -61,7 +68,6 @@ function Home(){
                         <div className="col mb-5">
                             <div className="card h-100">
                                 {/* Sale badge */}
-                                <div className="badge bg-dark text-white position-absolute" style={{top: "0.5rem", right: "0.5rem"}}>Sale</div>
                                 {/* Product image */}
                                 <img className="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
                                 {/* Product details */}
@@ -110,7 +116,6 @@ function Home(){
                         <div className="col mb-5">
                             <div className="card h-100">
                                 {/* Sale badge */}
-                                <div className="badge bg-dark text-white position-absolute" style={{top: "0.5rem", right: "0.5rem"}}>Sale</div>
                                 {/* Product image */}
                                 <img className="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
                                 {/* Product details */}
@@ -151,7 +156,6 @@ function Home(){
                         <div className="col mb-5">
                             <div className="card h-100">
                                 {/* Sale badge */}
-                                <div className="badge bg-dark text-white position-absolute" style={{top: "0.5rem", right: "0.5rem"}}>Sale</div>
                                 {/* Product image */}
                                 <img className="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
                                 {/* Product details */}
