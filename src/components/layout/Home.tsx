@@ -25,38 +25,38 @@ function Home() {
                     <table className="table">
                         <tbody>
                         <tr>
-                            <td className="text-left">서울 여행</td>
+                            <td className="text-left">서울 추천 명소</td>
                         </tr>
                         </tbody>
                     </table>
                     <div className="row gx-3 gx-lg-4 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center mb-5">
-                        {
-                            data?.data.slist.map((main: MainItem, index) =>
-                                <div className="col mb-4">
-                                    <div className="card h-100" key={index}>
-                                        <img className="card-img-top" src={main.image1}
-                                             style={{"width": "100%", "height": "220px"}}/>
-                                        <div className="card-body p-4">
-                                            <div className="text-center">
-                                                <h5 className="fw-bolder">{main.title}</h5>
-                                                {main.address}
-                                            </div>
+                    {
+                        data?.data.slist.map((main: MainItem, index) =>
+                            <div className="col mb-4">
+                                <div className="card h-100" key={index}>
+                                    <img className="card-img-top" src={main.image1}
+                                         style={{"width": "100%", "height": "220px"}}/>
+                                    <div className="card-body p-4">
+                                        <div className="text-center">
+                                            <h5 className="fw-bolder">{main.title}</h5>
+                                            {main.address}
                                         </div>
-                                        <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                            <div className="text-center">
-                                                <a className="btn btn-outline-dark mt-auto" href="#">상세보기</a>
-                                            </div>
+                                    </div>
+                                    <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                        <div className="text-center">
+                                            <a className="btn btn-outline-dark mt-auto" href="#">상세보기</a>
                                         </div>
                                     </div>
                                 </div>
-                            )
-                        }
-                    </div>
+                            </div>
+                        )
+                    }
+                </div>
 
                     <table className="table">
                         <tbody>
                         <tr>
-                            <td className="text-left">부산 여행</td>
+                            <td className="text-left">부산 추천 명소</td>
                         </tr>
                         </tbody>
                     </table>
@@ -87,7 +87,7 @@ function Home() {
                     <table className="table">
                         <tbody>
                         <tr>
-                            <td className="text-left">제주 여행</td>
+                            <td className="text-left">제주 추천 명소</td>
                         </tr>
                         </tbody>
                     </table>

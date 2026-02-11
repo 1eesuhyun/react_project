@@ -1,5 +1,5 @@
 import {JejuData} from "./commonsData";
-import {FC} from "react";
+import {FC, Fragment} from "react";
 
 interface PagePrintProps {
     data: JejuData;
@@ -14,27 +14,27 @@ const PagePrint: FC<PagePrintProps> = ({data, setCurpage}) => {
     const pageChange=(page:number)=>setCurpage(page)
     if(startPage>1){
         pageArr.push(
-            <li className="page-item">
-                <a className={"page-item"} onClick={prev}>&laquo;</a>
+            <li className="page-link">
+                <a className={"#"} onClick={prev}>&laquo;</a>
             </li>
         )
     }
     for(let i:number =startPage;i<=endPage;i++){
         pageArr.push(
-            <li className={i===curpage?"page-item active":"page-item"}><a className={"page-item"} onClick={()=>pageChange(i)}></a></li>
+            <li className={i===curpage?"active":""}><a className={"page-link"} onClick={()=>pageChange(i)}>{i}</a></li>
         )
     }
-    if(endPage>totalpage){
+    if(endPage<totalpage){
         pageArr.push(
-            <li className="page-item">
-                <a className={"page-item"} onClick={next}>&raquo;</a>
+            <li className="page-link">
+                <a className={"#"} onClick={next}>&raquo;</a>
             </li>
         )
     }
     return (
-        <ul className="pagination">
-            {pageArr}
-        </ul>
+            <ul className={"pagination justify-content-center"}>
+                {pageArr}
+            </ul>
     )
 }
 export default PagePrint;
