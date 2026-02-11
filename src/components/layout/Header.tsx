@@ -6,7 +6,7 @@ function Header() {
         <Fragment>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <div className="container px-4 px-lg-5">
-                    <a className="navbar-brand" href="#!">Korea</a>
+                    <a className="navbar-brand" href="/">Korea</a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
@@ -39,7 +39,7 @@ function Header() {
                                 <a className="nav-link dropdown-toggle" id="navbarDropdown" href="#"
                                    role="button" data-bs-toggle="dropdown" aria-expanded="false">제주</a>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a className="dropdown-item" href="#!">명소</a></li>
+                                    <li><a className="dropdown-item" href="/jeju/attraction">명소</a></li>
                                     <li><a className="dropdown-item" href="#!">쇼핑</a></li>
                                     <li><a className="dropdown-item" href="#!">음식</a></li>
                                     <li><a className="dropdown-item" href="#!">축제</a></li>
