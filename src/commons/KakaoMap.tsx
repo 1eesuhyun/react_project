@@ -52,7 +52,7 @@ const KakaoMap = ({address, name}: MapProps) => {
         });
     }, [address])
     return (
-        <div id="map" style={{"width": "100%", "height": "350px"}}></div>
+        <div id="map" style={{"width": "100%", "height": "450px"}}></div>
     )
 }
 

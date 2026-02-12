@@ -5,6 +5,12 @@ import Home from "./components/layout/Home";
 import Footer from "./components/layout/Footer";
 import JejuAttractionList from "./components/jeju/JejuAttractionList";
 import JejuAttractionDetail from "./components/jeju/JejuAttractionDetail";
+import YoutubeFind from "./Youtube/YoutubeFind";
+import BoardList from "./components/board/BoardList";
+import BoardDetail from "./components/board/BoardDetail";
+import BoardUpdate from "./components/board/BoardUpdate";
+import BoardInsert from "./components/board/BoardInsert";
+
 
 function App() {
     return (
@@ -13,7 +19,12 @@ function App() {
             <Routes>
                 <Route path="/" element={<Home/>}/>
                 <Route path="/jeju/attraction" element={<JejuAttractionList/>}/>
-                {/*<Route path="/jeju/attraction_detail/:contentid" element={<JejuAttractionDetail/>}/>*/}
+                <Route path="/jeju/attraction_detail/:contentid" element={<JejuAttractionDetail/>}/>
+                <Route path="/youtube" element={<YoutubeFind/>}/>
+                <Route path="/board/list" element={<BoardList/>}/>
+                <Route path="/board/insert" element={<BoardInsert/>}/>
+                <Route path="/board/detail/:no" element={<BoardDetail/>}/>
+                <Route path="/board/update/:no" element={<BoardUpdate/>}/>
             </Routes>
             <Footer />
         </Router>

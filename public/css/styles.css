@@ -10823,4 +10823,32 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
+
+  .pagination-area {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -ms-grid-row-align: center;
+    align-items: center;
+  }
+
+  .pagination-area .pagination .page-link {
+    color: #51545f;
+    margin: 0 2.5px;
+  }
+
+  .pagination-area .pagination .page-item.active .page-link,
+  .pagination-area .pagination .page-link:focus,
+  .pagination-area .pagination .page-link:hover {
+    color: #fff;
+    background-color: #0c63e4;
+    border-color: transparent;
+  }
+
+  .pagination-area .page-status p,
+  .contact-info-area .single-contact-info p {
+    margin-bottom: 0;
+  }
 }

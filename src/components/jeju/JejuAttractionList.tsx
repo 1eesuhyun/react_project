@@ -1,7 +1,7 @@
 import {Fragment, useState} from "react";
 import {useQuery} from "@tanstack/react-query";
 import apiClient from "../../http-commons";
-import {Link} from "react-router-dom";
+import {Link,useNavigate} from "react-router-dom";
 import {AxiosResponse} from "axios";
 import {JejuItem, JejuData} from "../../commons/commonsData"
 import PagePrint from "../../commons/PagePrint";
@@ -9,6 +9,7 @@ import App from "../../App";
 
 function JejuAttractionList() {
     const [curpage, setCurpage] = useState<number>(1);
+    const nav=useNavigate();
     const {isLoading, isError, error, data} = useQuery<AxiosResponse<JejuData, Error>>({
         queryKey: ['jeju-attraction', curpage],
         queryFn: async () => {
@@ -39,18 +40,15 @@ function JejuAttractionList() {
                             <div className="col mb-5" key={index}>
                                 <div className="card h-100 shadow-sm">
                                     <img className="card-img-top" src={jeju.image1}
-                                         style={{width: "100%", height: "220px"}}/>
+                                         style={{width: "100%", height: "220px"}} onClick={()=>nav("/jeju/attraction_detail/"+jeju.contentid)}/>
                                     <div className="card-body p-4">
                                         <div className="text-center">
-                                            <h5 className="fw-bolder mb-2">{jeju.title}</h5>
+                                            <h5 className="fw-bolder mb-2"><Link to={"/jeju/detail/"+jeju.contentid} style={{"textDecoration":"none","color":"black"}}>{jeju.title}</Link></h5>
                                             <p className="text-muted small mb-0">{jeju.address}</p>
                                         </div>
                                     </div>
                                     <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                         <div className="text-center">
-                                            <a className="btn btn-outline-dark mt-auto" href="#">
-                                                상세보기
-                                            </a>
                                         </div>
                                     </div>
                                 </div>

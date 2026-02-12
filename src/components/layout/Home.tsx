@@ -3,8 +3,10 @@ import {useQuery} from "@tanstack/react-query";
 import apiClient from "../../http-commons"
 import {MainData, MainItem} from "../../commons/commonsData";
 import {AxiosResponse} from "axios";
+import {Link, useNavigate} from "react-router-dom";
 
 function Home() {
+    const nav=useNavigate()
     const {isLoading, isError, error, data} = useQuery<AxiosResponse<MainData, Error>>({
         queryKey: ['main-data'],
         queryFn: async () => {
@@ -25,7 +27,7 @@ function Home() {
                     <table className="table">
                         <tbody>
                         <tr>
-                            <td className="text-left">서울 추천 명소</td>
+                            <td className="text-left" style={{"fontSize":"20px"}}>서울 추천 명소</td>
                         </tr>
                         </tbody>
                     </table>
@@ -43,9 +45,6 @@ function Home() {
                                         </div>
                                     </div>
                                     <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                        <div className="text-center">
-                                            <a className="btn btn-outline-dark mt-auto" href="#">상세보기</a>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -56,7 +55,7 @@ function Home() {
                     <table className="table">
                         <tbody>
                         <tr>
-                            <td className="text-left">부산 추천 명소</td>
+                            <td className="text-left" style={{"fontSize":"20px"}}>부산 추천 명소</td>
                         </tr>
                         </tbody>
                     </table>
@@ -74,9 +73,6 @@ function Home() {
                                             </div>
                                         </div>
                                         <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                            <div className="text-center">
-                                                <a className="btn btn-outline-dark mt-auto" href="#">상세보기</a>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -87,7 +83,7 @@ function Home() {
                     <table className="table">
                         <tbody>
                         <tr>
-                            <td className="text-left">제주 추천 명소</td>
+                            <td className="text-left" style={{"fontSize":"20px"}}>제주 추천 명소</td>
                         </tr>
                         </tbody>
                     </table>
@@ -96,18 +92,17 @@ function Home() {
                             data?.data.jlist.map((main: MainItem, index) =>
                                 <div className="col mb-5">
                                     <div className="card h-100" key={index}>
-                                        <img className="card-img-top" src={main.image1}
-                                             style={{"width": "100%", "height": "220px"}}/>
+                                        <img className="card-img-top" src={main.image1} style={{"width": "100%", "height": "220px"}}
+                                             onClick={()=>nav("/jeju/attraction_detail/"+main.contentid)}/>
                                         <div className="card-body p-4">
                                             <div className="text-center">
-                                                <h5 className="fw-bolder">{main.title}</h5>
+                                                <Link to={"/jeju/attraction_detail/"+main.contentid} style={{"textDecoration":"none","color":"#212529"}}>
+                                                    <h5 className="fw-bolder">{main.title}</h5>
+                                                </Link>
                                                 {main.address}
                                             </div>
                                         </div>
                                         <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                            <div className="text-center">
-                                                <a className="btn btn-outline-dark mt-auto" href="#">상세보기</a>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>

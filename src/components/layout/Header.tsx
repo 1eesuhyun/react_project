@@ -24,17 +24,18 @@ function Header() {
                                     <li><a className="dropdown-item" href="#!">축제</a></li>
                                     <li><a className="dropdown-item" href="#!">숙박</a></li>
                                 </ul>
-                            </li><li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle" id="navbarDropdown" href="#"
-                               role="button" data-bs-toggle="dropdown" aria-expanded="false">부산</a>
-                            <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a className="dropdown-item" href="#!">명소</a></li>
-                                <li><a className="dropdown-item" href="#!">쇼핑</a></li>
-                                <li><a className="dropdown-item" href="#!">음식</a></li>
-                                <li><a className="dropdown-item" href="#!">축제</a></li>
-                                <li><a className="dropdown-item" href="#!">숙박</a></li>
-                            </ul>
-                        </li>
+                            </li>
+                            <li className="nav-item dropdown">
+                                <a className="nav-link dropdown-toggle" id="navbarDropdown" href="#"
+                                   role="button" data-bs-toggle="dropdown" aria-expanded="false">부산</a>
+                                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a className="dropdown-item" href="#!">명소</a></li>
+                                    <li><a className="dropdown-item" href="#!">쇼핑</a></li>
+                                    <li><a className="dropdown-item" href="#!">음식</a></li>
+                                    <li><a className="dropdown-item" href="#!">축제</a></li>
+                                    <li><a className="dropdown-item" href="#!">숙박</a></li>
+                                </ul>
+                            </li>
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" id="navbarDropdown" href="#"
                                    role="button" data-bs-toggle="dropdown" aria-expanded="false">제주</a>
@@ -46,9 +47,11 @@ function Header() {
                                     <li><a className="dropdown-item" href="#!">숙박</a></li>
                                 </ul>
                             </li>
+                            <li className="nav-item"><Link className="nav-link" to={"/youtube"}>동영상 검색</Link></li>
+                            <li className="nav-item"><Link className="nav-link" to={"/board/list"}>커뮤니티</Link></li>
                         </ul>
                         <form className="d-flex">
-                            <button className="btn btn-outline-dark" type="button">
+                        <button className="btn btn-outline-dark" type="button">
                                 <i className="bi-cart-fill me-1"></i>
                                 Sign in
                             </button>
