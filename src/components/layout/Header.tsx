@@ -49,6 +49,7 @@ function Header() {
                             </li>
                             <li className="nav-item"><Link className="nav-link" to={"/youtube"}>동영상 검색</Link></li>
                             <li className="nav-item"><Link className="nav-link" to={"/board/list"}>커뮤니티</Link></li>
+                            <li className="nav-item"><Link className="nav-link" to={"/chatbot"}>챗봇</Link></li>
                         </ul>
                         <form className="d-flex">
                         <button className="btn btn-outline-dark" type="button">

@@ -10,6 +10,7 @@ import BoardList from "./components/board/BoardList";
 import BoardDetail from "./components/board/BoardDetail";
 import BoardUpdate from "./components/board/BoardUpdate";
 import BoardInsert from "./components/board/BoardInsert";
+import ChatBot from "./chatbot/ChatBot";
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
                 <Route path="/board/insert" element={<BoardInsert/>}/>
                 <Route path="/board/detail/:no" element={<BoardDetail/>}/>
                 <Route path="/board/update/:no" element={<BoardUpdate/>}/>
+                <Route path="/chatbot" element={<ChatBot/>}/>
             </Routes>
             <Footer />
         </Router>
