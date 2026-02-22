@@ -35,7 +35,7 @@ app.get("/board/list", async (req, res) => {
         const listSql = `
             SELECT no, subject, name, hit, TO_CHAR(regdate, 'YYYY-MM-DD') as dbday
             FROM board_1
-            ORDER BY no DESC
+            ORDER BY no ASC
             OFFSET ${start} ROWS FETCH NEXT 12 ROWS ONLY
         `;
         const totalSql = `
@@ -45,7 +45,6 @@ app.get("/board/list", async (req, res) => {
         const total = await conn.execute(totalSql);
         const result = await conn.execute(listSql)
         const totalpage = (total.rows as { TOTALPAGE: number }[])[0].TOTALPAGE
-        console.log(result.rows)
         res.json({
             curpage: page,
             totalpage,
@@ -119,7 +118,6 @@ app.get("/board/update", async (req, res) => {
             WHERE no =${no}
         `
         const result = await conn.execute(sql);
-        console.log(result)
         res.json(result.rows?.[0])
     } catch (err) {
         console.log(err);
@@ -142,7 +140,6 @@ app.put("/board/update_ok", async (req, res) => {
               AND pwd=${pwd}
         `
         const check = await conn.execute(checkSql);
-        console.log(check)
         const count = (check.rows as any[])[0].RES
         if (count === 0) {
             //console.log("비번 틀림"+count)
@@ -180,7 +177,6 @@ app.delete("/board/delete/:no/:pwd", async (req, res) => {
               AND pwd=${pwd}
         `
         const check = await conn.execute(checkSql);
-        console.log(check.rows)
 
         const count=(check.rows as any[])[0].RES
 
@@ -222,7 +218,6 @@ app.get('/news', function (req, res) {
             res.end(body);
         } else {
             res.status(response.statusCode).end();
-            console.log('error = ' + response.statusCode);
         }
     });
 });

@@ -18,6 +18,7 @@ interface BoardListResponse {
 }
 
 function BoardList() {
+    const [login,setLogin]=useState<boolean>(false);
     const [curpage, setCurpage] = useState<number>(1);
     const {isLoading,isError,error,data,refetch:hitIncrement}=useQuery<{data:BoardListResponse}>({
         queryKey:['board-list',curpage],
@@ -25,8 +26,11 @@ function BoardList() {
     })
     useEffect(() => {
         hitIncrement();
+        if(sessionStorage.getItem("id"))
+        {
+            setLogin(true);
+        }
     }, [curpage]);
-    console.log(data)
     if(isLoading){
         return <h1 className={"text-center"}>Loading...</h1>
     }
@@ -64,7 +68,11 @@ function BoardList() {
                             <tbody>
                             <tr>
                                 <td>
-                                    <Link to="/board/insert" className={"btn btn-outline-dark mt-auto"}>새글</Link>
+                                    {
+                                        login && (
+                                            <Link to="/board/insert" className={"btn btn-outline-dark mt-auto"}>새글</Link>
+                                            )
+                                    }
                                 </td>
                             </tr>
                             </tbody>
@@ -93,9 +101,9 @@ function BoardList() {
                             }
                             <tr>
                                 <td className={"text-center"} colSpan={5}>
-                                    <button className="btn btn-outline-dark">이전</button>
+                                    <button className="btn btn-outline-dark" onClick={()=>setCurpage(curpage-1)}>이전</button>
                                     &nbsp;{data?.data.curpage} page / {data?.data.totalpage} pages&nbsp;
-                                    <button className="btn btn-outline-primary">다음</button>
+                                    <button className="btn btn-outline-primary" onClick={()=>setCurpage(curpage+1)}>다음</button>
                                 </td>
                             </tr>
                             </tbody>

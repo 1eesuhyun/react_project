@@ -158,7 +158,7 @@ function ChatBot() {
                                         e.key === "Enter" && sendMessage()
                                     }
                                 />
-                                <button onClick={sendMessage}>
+                                <button onClick={sendMessage} className={"btn btn-outline-dark mt-auto"}>
                                     전송
                                 </button>
                             </div>

@@ -27,17 +27,17 @@ function Home() {
                     <table className="table">
                         <tbody>
                         <tr>
-                            <td className="text-left" style={{"fontSize":"20px"}}>서울 추천 명소</td>
+                            <td className="text-left" style={{"fontSize":"20px"}} onClick={()=>nav("/jeju/attraction")}>제주 추천 명소</td>
                         </tr>
                         </tbody>
                     </table>
                     <div className="row gx-3 gx-lg-4 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center mb-5">
                     {
-                        data?.data.slist.map((main: MainItem, index) =>
+                        data?.data.jlist.map((main: MainItem, index) =>
                             <div className="col mb-4">
                                 <div className="card h-100" key={index}>
                                     <img className="card-img-top" src={main.image1}
-                                         style={{"width": "100%", "height": "220px"}}/>
+                                         style={{"width": "100%", "height": "220px"}} onClick={()=>nav("/jeju/attraction_detail/"+main.contentid)}/>
                                     <div className="card-body p-4">
                                         <div className="text-center">
                                             <h5 className="fw-bolder">{main.title}</h5>
@@ -83,17 +83,16 @@ function Home() {
                     <table className="table">
                         <tbody>
                         <tr>
-                            <td className="text-left" style={{"fontSize":"20px"}}>제주 추천 명소</td>
+                            <td className="text-left" style={{"fontSize":"20px"}}>서울 추천 명소</td>
                         </tr>
                         </tbody>
                     </table>
                     <div className="row gx-3 gx-lg-4 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center mb-5">
                         {
-                            data?.data.jlist.map((main: MainItem, index) =>
+                            data?.data.slist.map((main: MainItem, index) =>
                                 <div className="col mb-5">
                                     <div className="card h-100" key={index}>
-                                        <img className="card-img-top" src={main.image1} style={{"width": "100%", "height": "220px"}}
-                                             onClick={()=>nav("/jeju/attraction_detail/"+main.contentid)}/>
+                                        <img className="card-img-top" src={main.image1} style={{"width": "100%", "height": "220px"}}/>
                                         <div className="card-body p-4">
                                             <div className="text-center">
                                                 <Link to={"/jeju/attraction_detail/"+main.contentid} style={{"textDecoration":"none","color":"#212529"}}>
